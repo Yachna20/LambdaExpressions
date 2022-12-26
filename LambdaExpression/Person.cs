@@ -54,14 +54,31 @@ namespace LambdaExpression
             double average = persons.Average(e => e.age);
             Console.WriteLine(average);
         }
+        public static void CheckName(List<Person> persons)
+        {
 
-        static void Main(string[] args)
+            Console.WriteLine("Enter name");
+            string name = Console.ReadLine();
+            if (persons.Exists(e => e.name == name))
+            {
+                Console.WriteLine(name + " is present in list");
+            }
+            else
+            {
+                Console.WriteLine("Not present");
+            }
+
+        }
+
+
+            static void Main(string[] args)
         {
             List<Person> list = new List<Person>();
             AddRecords(list);
             //RetiveTopRecord(list);
             //RetrieveRecord(list);
-            AvgAge(list);
+           // AvgAge(list);
+             CheckName(list);
         }
     }
 }
