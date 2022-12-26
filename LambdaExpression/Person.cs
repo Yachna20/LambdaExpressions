@@ -47,13 +47,21 @@ namespace LambdaExpression
                 Console.WriteLine("Name " + person.name + "Age" + person.age);
             }
         }
+        public static void AvgAge(List<Person> persons)
 
-            static void Main(string[] args)
+
+        {
+            double average = persons.Average(e => e.age);
+            Console.WriteLine(average);
+        }
+
+        static void Main(string[] args)
         {
             List<Person> list = new List<Person>();
             AddRecords(list);
             //RetiveTopRecord(list);
-            RetrieveRecord(list);
+            //RetrieveRecord(list);
+            AvgAge(list);
         }
     }
 }
