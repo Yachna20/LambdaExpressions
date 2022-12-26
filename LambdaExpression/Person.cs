@@ -33,11 +33,19 @@ namespace LambdaExpression
                 Console.WriteLine(person.name);
             }
         }
+        public static void RetiveTopRecord(List<Person> persons)
+        {
+            foreach (Person person in persons.FindAll(e => (e.age <= 60)))
+            {
+                Console.WriteLine("Name " +person.name+ "Age" +person.age);
+            }
+        }
 
         static void Main(string[] args)
         {
             List<Person> list = new List<Person>();
             AddRecords(list);
+            RetiveTopRecord(list);
         }
     }
 }
