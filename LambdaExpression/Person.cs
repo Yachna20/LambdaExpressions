@@ -40,12 +40,20 @@ namespace LambdaExpression
                 Console.WriteLine("Name " +person.name+ "Age" +person.age);
             }
         }
+        public static void RetrieveRecord(List<Person> persons)
+        {
+            foreach (Person person in persons.FindAll(e => (e.age >= 13 && e.age <= 18))) 
+            {
+                Console.WriteLine("Name " + person.name + "Age" + person.age);
+            }
+        }
 
-        static void Main(string[] args)
+            static void Main(string[] args)
         {
             List<Person> list = new List<Person>();
             AddRecords(list);
-            RetiveTopRecord(list);
+            //RetiveTopRecord(list);
+            RetrieveRecord(list);
         }
     }
 }
